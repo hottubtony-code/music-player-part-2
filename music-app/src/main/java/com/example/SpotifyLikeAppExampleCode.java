@@ -88,8 +88,10 @@ public class SpotifyLikeAppExampleCode {
     System.out.println("[F]avorites");
     System.out.println("[Q]uit");
     System.out.println();
-    System.out.println("Song control: [T]oggle favorite");
-    System.out.print("Enter a choice (h, s, l, f, q, or t): ");
+    System.out.println("Song controls: [U] Pause/Resume | [X] Stop");
+    System.out.println("[R] Rewind 5 seconds | [N] Forward 5 seconds");
+    System.out.println("[T] Toggle favorite");
+    System.out.print("Enter a choice (h, s, l, f, q, u, x, r, n, or t): ");
   }
 
   /*
@@ -112,6 +114,32 @@ public class SpotifyLikeAppExampleCode {
 
         if (!hasFavorites) {
           System.out.println("No favorites yet. Play a song and use t to favorite it.");
+        }
+        break;
+      }
+      case "r": {
+        if (audioClip == null || !audioClip.isOpen()) {
+          System.out.println("Choose a song from the library first.");
+        } else {
+          long position = audioClip.getMicrosecondPosition();
+          long newPosition = Math.max(0, position - 5_000_000L);
+          audioClip.setMicrosecondPosition(newPosition);
+          System.out.println("Rewound 5 seconds. Position: "
+              + newPosition / 1_000_000.0 + " seconds.");
+        }
+        break;
+      }
+      case "n": {
+        if (audioClip == null || !audioClip.isOpen()) {
+          System.out.println("Choose a song from the library first.");
+        } else {
+          long position = audioClip.getMicrosecondPosition();
+          long newPosition = Math.min(
+              audioClip.getMicrosecondLength(),
+              position + 5_000_000L);
+          audioClip.setMicrosecondPosition(newPosition);
+          System.out.println("Forward 5 seconds. Position: "
+              + newPosition / 1_000_000.0 + " seconds.");
         }
         break;
       }
