@@ -115,6 +115,26 @@ public class SpotifyLikeAppExampleCode {
         }
         break;
       }
+      case "x":
+        if (audioClip == null || !audioClip.isOpen()) {
+          System.out.println("Choose a song from the library first.");
+        } else {
+          audioClip.stop();
+          audioClip.setMicrosecondPosition(0);
+          System.out.println("Stopped and reset to the beginning.");
+        }
+        break;
+      case "u":
+        if (audioClip == null || !audioClip.isOpen()) {
+          System.out.println("Choose a song from the library first.");
+        } else if (audioClip.isRunning()) {
+          audioClip.stop();
+          System.out.println("Paused.");
+        } else {
+          audioClip.loop(Clip.LOOP_CONTINUOUSLY);
+          System.out.println("Resumed.");
+        }
+        break;
       case "t":
         if (currentSong == null) {
           System.out.println("Choose a song from the library first.");
