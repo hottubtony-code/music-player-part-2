@@ -85,11 +85,11 @@ public class SpotifyLikeAppExampleCode {
     System.out.println("[H]ome");
     System.out.println("[S]earch by title");
     System.out.println("[L]ibrary");
-    System.out.println("[P]lay");
+    System.out.println("[F]avorites");
     System.out.println("[Q]uit");
-
-    System.out.println("");
-    System.out.print("Enter a choice (h, s, l, p, or q): ");
+    System.out.println();
+    System.out.println("Song control: [T]oggle favorite");
+    System.out.print("Enter a choice (h, s, l, f, q, or t): ");
   }
 
   /*
@@ -97,6 +97,24 @@ public class SpotifyLikeAppExampleCode {
    */
   public static void handleMenu(String userInput, Song[] library, Scanner input) {
     switch (userInput) {
+      case "f": {
+        System.out.println("-->Favorites<--");
+        boolean hasFavorites = false;
+
+        for (int i = 0; i < library.length; i++) {
+          if (library[i].isFavorite()) {
+            System.out.println((i + 1) + ". "
+                + library[i].name() + " - "
+                + library[i].artist());
+            hasFavorites = true;
+          }
+        }
+
+        if (!hasFavorites) {
+          System.out.println("No favorites yet. Play a song and use t to favorite it.");
+        }
+        break;
+      }
       case "t":
         if (currentSong == null) {
           System.out.println("Choose a song from the library first.");
