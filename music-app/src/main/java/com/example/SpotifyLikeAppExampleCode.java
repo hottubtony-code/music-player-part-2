@@ -102,6 +102,7 @@ public class SpotifyLikeAppExampleCode {
           System.out.println("Choose a song from the library first.");
         } else {
           currentSong.toggleFavorite();
+          saveAudioLibrary(library);
           System.out.println("Favorite: " + currentSong.isFavorite()
               + " - " + currentSong.name());
         }
@@ -260,5 +261,16 @@ public class SpotifyLikeAppExampleCode {
     }
 
     return library;
+  }
+
+  public static void saveAudioLibrary(Song[] library) {
+    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+    try (FileWriter writer = new FileWriter(directoryPath + "/audio-library.json")) {
+      gson.toJson(library, writer);
+    } catch (IOException e) {
+      System.out.println("Could not save favorite choices: "
+          + e.getMessage());
+    }
   }
 }

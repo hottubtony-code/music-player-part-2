@@ -3,76 +3,88 @@
     "name": "Teach Me How to Dougie",
     "artist": "Cali Swag District",
     "fileName": "dougie-crop.wav",
-    "year": 2010,"genre": "Hip-hop"
+    "year": 2010,
+    "genre": "Hip-hop",
+    "isFavorite": false
   },
   {
-    "name": "Could've Been (Tik Tok Remix)",
+    "name": "Could\u0027ve Been (Tik Tok Remix)",
     "artist": "H.E.R.",
     "fileName": "her-crop.wav",
     "year": 0,
-    "genre": "R&B"
+    "genre": "R\u0026B",
+    "isFavorite": true
   },
   {
     "name": "On Me",
     "artist": "Lil Baby",
     "fileName": "lil-baby-crop.wav",
     "year": 2020,
-    "genre": "Hip-hop"
+    "genre": "Hip-hop",
+    "isFavorite": false
   },
   {
     "name": "Mo Money Mo Problems",
     "artist": "Notorios BIG",
-	  "fileName": "biggie-crop.wav",
+    "fileName": "biggie-crop.wav",
     "year": 1997,
-    "genre": "Hip-hop"
+    "genre": "Hip-hop",
+    "isFavorite": false
   },
   {
     "name": "Industry Baby",
     "artist": "Lil Nas X",
     "fileName": "lil-nas-x-crop.wav",
     "year": 2021,
-    "genre": "Hip-hop"
+    "genre": "Hip-hop",
+    "isFavorite": false
   },
-    {
+  {
     "name": "Thief in the Night",
     "artist": "Kevin MacLeod",
     "fileName": "thief-in-the-night-crop.wav",
     "year": 2016,
-    "genre": "Reggae"
+    "genre": "Reggae",
+    "isFavorite": false
   },
-    {
+  {
     "name": "Maccary Bay",
     "artist": "Kevin MacLeod",
     "fileName": "maccary-bay-crop.wav",
     "year": 2015,
-    "genre": "Reggae"
+    "genre": "Reggae",
+    "isFavorite": false
   },
-    {
+  {
     "name": "Gonna Start",
     "artist": "Kevin MacLeod",
     "fileName": "gonna-start-crop.wav",
     "year": 2014,
-    "genre": "Reggae"
+    "genre": "Reggae",
+    "isFavorite": false
   },
-    {
+  {
     "name": "Dub Eastern",
     "artist": "Kevin MacLeod",
     "fileName": "dub-eastern-crop.wav",
     "year": 2012,
-    "genre": "Reggae"
+    "genre": "Reggae",
+    "isFavorite": false
   },
-    {
+  {
     "name": "Mandeville",
     "artist": "Kevin MacLeod",
     "fileName": "mandeville-crop.wav",
     "year": 2011,
-    "genre": "Reggae"
+    "genre": "Reggae",
+    "isFavorite": false
   },
-    {
+  {
     "name": "Montego",
     "artist": "Kevin MacLeod",
     "fileName": "montego-crop.wav",
     "year": 2011,
-    "genre": "Reggae"
+    "genre": "Reggae",
+    "isFavorite": false
   }
 ]
