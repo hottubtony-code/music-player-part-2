@@ -11,6 +11,7 @@ public class SpotifyLikeAppExampleCode {
 
   // the current audio clip
   private static Clip audioClip;
+  private static Song currentSong;
 
   /*
    *** IMPORTANT NOTE FOR ALL STUDENTS ***
@@ -96,6 +97,15 @@ public class SpotifyLikeAppExampleCode {
    */
   public static void handleMenu(String userInput, Song[] library, Scanner input) {
     switch (userInput) {
+      case "t":
+        if (currentSong == null) {
+          System.out.println("Choose a song from the library first.");
+        } else {
+          currentSong.toggleFavorite();
+          System.out.println("Favorite: " + currentSong.isFavorite()
+              + " - " + currentSong.name());
+        }
+        break;
       case "h":
         System.out.println("-->Home<--");
         System.out.println("Welcome to your music player!");
@@ -212,6 +222,7 @@ public class SpotifyLikeAppExampleCode {
       final AudioInputStream in = AudioSystem.getAudioInputStream(file);
 
       audioClip.open(in);
+      currentSong = library[i];
       audioClip.setMicrosecondPosition(0);
       audioClip.loop(Clip.LOOP_CONTINUOUSLY);
       System.out.println("Title: " + library[i].name());
@@ -224,6 +235,7 @@ public class SpotifyLikeAppExampleCode {
       }
 
       System.out.println("Genre: " + library[i].genre());
+      System.out.println("Favorite: " + currentSong.isFavorite());
       System.out.println("File path: " + filePath);
       System.out.println();
     } catch (Exception e) {

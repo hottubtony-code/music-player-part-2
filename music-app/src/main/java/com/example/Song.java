@@ -16,6 +16,16 @@ public class Song {
     return genre;
   }
 
+  private boolean isFavorite;
+
+  public boolean isFavorite() {
+    return isFavorite;
+  }
+
+  public void toggleFavorite() {
+    isFavorite = !isFavorite;
+  }
+
   // serializes attributes into a string
   public String toString() {
     String s;
